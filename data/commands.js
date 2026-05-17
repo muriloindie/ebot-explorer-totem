@@ -1,0 +1,22 @@
+window.EBOT_COMMANDS = [
+  { id: "free", intent: "filter", target: "free", texts: { pt: ["mostrar lugares grátis", "quero atrações gratuitas", "lugares sem custo"], en: ["show me free places", "free attractions", "no cost places"], es: ["muéstrame lugares gratis", "atracciones gratis", "lugares sin costo"] } },
+  { id: "food", intent: "screen", target: "food", texts: { pt: ["buscar gastronomia", "encontrar restaurantes", "quero comer"], en: ["find restaurants", "show food", "where to eat"], es: ["buscar gastronomía", "encontrar restaurantes", "quiero comer"] } },
+  { id: "route", intent: "screen", target: "routes", texts: { pt: ["sugerir uma rota", "montar roteiro", "quero uma rota"], en: ["suggest a route", "build an itinerary", "show routes"], es: ["sugerir una ruta", "quiero una ruta", "crear itinerario"] } },
+  { id: "accessible", intent: "route", target: "accessible-comfort", texts: { pt: ["rota acessível", "mostrar lugares acessíveis", "preciso de acessibilidade"], en: ["show accessible places", "accessible route", "wheelchair friendly"], es: ["ruta accesible", "lugares accesibles", "quiero una ruta accesible"] } },
+  { id: "nearby", intent: "filter", target: "nearby", texts: { pt: ["perto de mim", "lugares próximos", "o que tem aqui perto"], en: ["places near me", "nearby places", "what is close"], es: ["cerca de mí", "lugares cercanos", "qué hay cerca"] } },
+  { id: "historic", intent: "filter", target: "historic", texts: { pt: ["quero lugares históricos", "história", "patrimônio"], en: ["historic places", "show history", "heritage"], es: ["lugares históricos", "historia", "patrimonio"] } },
+  { id: "museum", intent: "filter", target: "museum", texts: { pt: ["museus", "exposições", "arte"], en: ["museums", "exhibitions", "art"], es: ["museos", "exposiciones", "arte"] } },
+  { id: "park", intent: "filter", target: "park", texts: { pt: ["parques", "natureza", "área verde"], en: ["parks", "nature", "green areas"], es: ["parques", "naturaleza", "zona verde"] } },
+  { id: "coffee", intent: "filter", target: "coffee", texts: { pt: ["quero café", "cafeteria", "pausa para café"], en: ["coffee", "cafe", "coffee break"], es: ["café", "cafetería", "pausa para café"] } },
+  { id: "voice", intent: "voice-only", target: "voice", texts: { pt: ["modo voz", "usar somente voz"], en: ["voice mode", "voice only"], es: ["modo voz", "solo voz"] } },
+  { id: "chat", intent: "screen", target: "chat", texts: { pt: ["conversar com ebot", "abrir chat"], en: ["talk to ebot", "open chat"], es: ["hablar con ebot", "abrir chat"] } },
+  { id: "help", intent: "screen", target: "help", texts: { pt: ["ajuda", "como usar"], en: ["help", "how to use"], es: ["ayuda", "cómo usar"] } },
+  { id: "lang-en", intent: "language", target: "en", texts: { pt: ["mudar para inglês", "idioma inglês"], en: ["change language to english"], es: ["cambiar a inglés"] } },
+  { id: "lang-pt", intent: "language", target: "pt", texts: { pt: ["mudar para português"], en: ["change language to portuguese"], es: ["cambiar a portugués"] } },
+  { id: "lang-es", intent: "language", target: "es", texts: { pt: ["mudar para espanhol"], en: ["change language to spanish"], es: ["cambiar a español"] } },
+  { id: "beach", intent: "filter", target: "beach", texts: { pt: ["praia", "orla"], en: ["beach", "waterfront"], es: ["playa", "orla"] } },
+  { id: "photo", intent: "filter", target: "photo", texts: { pt: ["lugares para foto", "fotos bonitas"], en: ["photo spots", "beautiful photos"], es: ["lugares para fotos", "fotos bonitas"] } },
+  { id: "rain", intent: "filter", target: "rain", texts: { pt: ["dia de chuva", "lugares cobertos"], en: ["rainy day", "indoor places"], es: ["día de lluvia", "lugares cubiertos"] } },
+  { id: "kids", intent: "filter", target: "kids", texts: { pt: ["com crianças", "infantil"], en: ["with kids", "children"], es: ["con niños", "infantil"] } },
+  { id: "restart", intent: "restart", target: "attract", texts: { pt: ["reiniciar", "começar de novo"], en: ["restart", "start over"], es: ["reiniciar", "empezar de nuevo"] } }
+];

@@ -1,0 +1,38 @@
+:root {
+  --font-display: "Outfit", "Plus Jakarta Sans", sans-serif;
+  --font-body: "Plus Jakarta Sans", "Outfit", sans-serif;
+  --ink: #092033;
+  --muted: #526577;
+  --soft: #eef6fb;
+  --paper: #f8fbff;
+  --panel: rgba(255, 255, 255, .78);
+  --panel-solid: #ffffff;
+  --orange: #f97316;
+  --orange-2: #ffb15c;
+  --blue: #0ea5e9;
+  --cyan: #67e8f9;
+  --green: #16a34a;
+  --danger: #ef4444;
+  --line: rgba(9, 32, 51, .1);
+  --shadow-soft: 18px 22px 48px rgba(29, 65, 91, .13), -12px -12px 34px rgba(255, 255, 255, .86);
+  --shadow-pressed: inset 8px 8px 20px rgba(29, 65, 91, .12), inset -8px -8px 20px rgba(255, 255, 255, .86);
+  --radius-xl: 38px;
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+  --nav-h: 86px;
+  --assistant-w: 380px;
+  --ease: cubic-bezier(.2, .9, .2, 1);
+}
+
+body.high-contrast {
+  --ink: #020617;
+  --muted: #172554;
+  --paper: #ffffff;
+  --panel: rgba(255, 255, 255, .96);
+  --line: rgba(2, 6, 23, .32);
+  --shadow-soft: 0 0 0 3px rgba(2, 6, 23, .2);
+}
+
+body.large-text { font-size: 112%; }
+body.reduced-motion *, body.reduced-motion *::before, body.reduced-motion *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }

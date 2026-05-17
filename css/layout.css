@@ -1,0 +1,82 @@
+.kiosk-nav {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  right: auto;
+  z-index: 30;
+  min-height: var(--nav-h);
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, .72);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, .78);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: min(1980px, calc(100% - 36px));
+}
+
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; transition: opacity .25s var(--ease), transform .25s var(--ease); }
+.nav-inner.is-hidden { opacity: 0; transform: translateY(-14px); pointer-events: none; }
+.nav-reveal-btn { position: fixed; top: 18px; left: 18px; z-index: 32; width: 68px; height: 68px; border-radius: 24px; display: none; place-items: center; color: #fff; background: linear-gradient(135deg, #111827, var(--orange)); box-shadow: 0 18px 38px rgba(249,115,22,.26); cursor: pointer; }
+.nav-reveal-btn.is-visible { display: grid; }
+
+.brand-lockup { display: flex; align-items: center; gap: 12px; min-width: 230px; }
+.brand-mark { width: 54px; height: 54px; border-radius: 18px; background: #111827 url("../assets/images/Icone_explore_aplicação_1_white@4x.png") center / 72% auto no-repeat; box-shadow: 0 14px 28px rgba(249,115,22,.25); display: grid; place-items: center; color: transparent; font-weight: 900; letter-spacing: -.04em; }
+.brand-title { font-family: var(--font-display); font-weight: 900; font-size: 24px; line-height: .9; }
+.brand-sub { font-size: 12px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; }
+.nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: nowrap; justify-content: flex-end; min-width: 0; overflow-x: auto; overflow-y: visible; scrollbar-width: none; }
+.nav-actions::-webkit-scrollbar { display: none; }
+
+.screen-host {
+  position: relative;
+  height: 100vh;
+  padding: calc(var(--nav-h) + 44px) 426px 28px 28px;
+  overflow: auto;
+  scroll-behavior: smooth;
+  max-width: 1980px;
+  margin: 0 auto;
+}
+
+body.screen-attract .screen-host { padding-right: 28px; overflow: hidden; }
+body.screen-attract .assistant-dock { display: none; }
+
+.screen-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(420px, .72fr); gap: 24px; min-height: calc(100vh - var(--nav-h) - 76px); }
+.panel-stack { display: grid; gap: 18px; align-content: start; }
+.wide-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+.span-8 { grid-column: span 8; }
+.span-6 { grid-column: span 6; }
+.span-4 { grid-column: span 4; }
+.span-12 { grid-column: span 12; }
+
+.assistant-dock {
+  position: fixed;
+  top: calc(var(--nav-h) + 44px);
+  right: 28px;
+  bottom: 28px;
+  z-index: 24;
+  width: var(--assistant-w);
+}
+
+@media (min-width: 2200px) and (orientation: landscape) {
+  .kiosk-nav { left: calc((100vw - 1980px) / 2 + 18px); width: calc(1980px - 36px); }
+  .assistant-dock { right: calc((100vw - 1980px) / 2 + 28px); }
+  body.screen-attract .kiosk-nav { width: calc(1980px - 36px); }
+}
+
+.modal-layer { position: fixed; inset: 0; z-index: 60; pointer-events: none; }
+.modal-layer.has-modal { pointer-events: auto; background: rgba(9, 32, 51, .24); backdrop-filter: blur(14px); display: grid; place-items: center; padding: 28px; }
+
+.keyboard-panel {
+  position: fixed;
+  left: max(24px, calc((100vw - 1980px) / 2 + 24px));
+  right: max(24px, calc((100vw - 1980px) / 2 + 24px));
+  bottom: 24px;
+  z-index: 55;
+  transform: translateY(125%);
+  opacity: 0;
+  pointer-events: none;
+}
+.keyboard-panel.is-visible { pointer-events: auto; }
