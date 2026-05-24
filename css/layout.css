@@ -1,8 +1,9 @@
 .kiosk-nav {
   position: fixed;
   top: 18px;
-  left: 18px;
+  left: 50%;
   right: auto;
+  transform: translateX(-50%);
   z-index: 30;
   min-height: var(--nav-h);
   padding: 12px;
@@ -15,10 +16,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  width: min(1980px, calc(100% - 36px));
+  width: calc(100% - 36px);
+  max-width: 1980px;
 }
 
-.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; transition: opacity .25s var(--ease), transform .25s var(--ease); }
+.nav-inner { display: grid; grid-template-columns: minmax(210px, 280px) minmax(0, 1fr); align-items: center; gap: 14px; width: 100%; transition: opacity .25s var(--ease), transform .25s var(--ease); }
 .nav-inner.is-hidden { opacity: 0; transform: translateY(-14px); pointer-events: none; }
 .nav-reveal-btn { position: fixed; top: 18px; left: 18px; z-index: 32; width: 68px; height: 68px; border-radius: 24px; display: none; place-items: center; color: #fff; background: linear-gradient(135deg, #111827, var(--orange)); box-shadow: 0 18px 38px rgba(249,115,22,.26); cursor: pointer; }
 .nav-reveal-btn.is-visible { display: grid; }
@@ -61,7 +63,7 @@ body.screen-attract .assistant-dock { display: none; }
 }
 
 @media (min-width: 2200px) and (orientation: landscape) {
-  .kiosk-nav { left: calc((100vw - 1980px) / 2 + 18px); width: calc(1980px - 36px); }
+  .kiosk-nav { left: 50%; width: calc(1980px - 36px); transform: translateX(-50%); }
   .assistant-dock { right: calc((100vw - 1980px) / 2 + 28px); }
   body.screen-attract .kiosk-nav { width: calc(1980px - 36px); }
 }
