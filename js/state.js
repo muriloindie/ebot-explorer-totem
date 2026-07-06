@@ -13,7 +13,30 @@ EBOT.State = {
     activeTags: [],
     selectedPlaceId: null,
     selectedRouteId: null,
-    routeDraft: [],
+    routeDraft: (() => {
+      try {
+        const cached = JSON.parse(localStorage.getItem("ebot:routeDraft") || "[]");
+        return Array.isArray(cached) ? cached : [];
+      } catch (error) {
+        return [];
+      }
+    })(),
+    routeDraftMeta: (() => {
+      try {
+        const cached = JSON.parse(localStorage.getItem("ebot:routeDraftMeta") || "{}");
+        return cached && typeof cached === "object" ? cached : {};
+      } catch (error) {
+        return {};
+      }
+    })(),
+    routeDraftSourceId: null,
+    routeSearchQuery: "",
+    routeMetaModalOpen: false,
+    aiMapMode: "route",
+    aiStep: 0,
+    aiPrefs: {},
+    assistantCollapsed: true,
+    assistantAutoOpen: false,
     chatMessages: [],
     registration: {},
     visited: [],
@@ -25,6 +48,8 @@ EBOT.State = {
     currentCoords: null,
     galleryIndex: 0,
     zoomImage: null,
+    galleryOpen: false,
+    galleryZoom: 1,
     accessibility: { highContrast: false, reducedMotion: false, largeText: false, silentMode: false },
     lastInteractionAt: Date.now()
   },
@@ -38,7 +63,7 @@ EBOT.State = {
   reset(keepLanguage) {
     const lang = this.data.language;
     const accessibility = this.data.accessibility;
-    this.data = { ...this.data, screen: "attract", history: [], voiceOnly: false, keyboardVisible: false, assistantState: "idle", assistantMessage: "", searchQuery: "", activeTags: [], selectedPlaceId: null, selectedRouteId: null, routeDraft: [], chatMessages: [], registration: {}, visited: [], badges: [], language: keepLanguage ? lang : EBOT_SETTINGS.defaultLanguage, accessibility, lastInteractionAt: Date.now() };
+    this.data = { ...this.data, screen: "attract", history: [], voiceOnly: false, keyboardVisible: false, assistantState: "idle", assistantMessage: "", searchQuery: "", activeTags: [], selectedPlaceId: null, selectedRouteId: null, routeDraft: [], routeDraftMeta: {}, routeDraftSourceId: null, routeSearchQuery: "",     routeMetaModalOpen: false, aiMapMode: "route", aiStep: 0, aiPrefs: {}, assistantCollapsed: true, assistantAutoOpen: false, chatMessages: [], registration: {}, visited: [], badges: [], language: keepLanguage ? lang : EBOT_SETTINGS.defaultLanguage, accessibility, lastInteractionAt: Date.now() };
     this.data.voiceLanguage = EBOT_SETTINGS.voiceLanguages[this.data.language];
     this.listeners.forEach((fn) => fn(this.data, { reset: true }));
   }

@@ -28,5 +28,10 @@ window.EBOT_TAGS = [
   { id: "quick", label: { pt: "Rápido", en: "Quick", es: "Rápido" }, icon: "bolt", accent: "#f97316", group: "duration", synonyms: ["fast", "rápido", "rapido"], keywords: ["short"] },
   { id: "halfday", label: { pt: "Meio dia", en: "Half day", es: "Medio día" }, icon: "clock", accent: "#0ea5e9", group: "duration", synonyms: ["half", "medio"], keywords: ["route"] },
   { id: "fullroute", label: { pt: "Roteiro completo", en: "Full route", es: "Ruta completa" }, icon: "route", accent: "#10b981", group: "duration", synonyms: ["day", "dia", "día"], keywords: ["itinerary"] },
-  { id: "quiet", label: { pt: "Tranquilo", en: "Quiet", es: "Tranquilo" }, icon: "circle", accent: "#64748b", group: "mood", synonyms: ["calm", "calmo", "quieto"], keywords: ["relax"] }
+  { id: "quiet", label: { pt: "Tranquilo", en: "Quiet", es: "Tranquilo" }, icon: "circle", accent: "#64748b", group: "mood", synonyms: ["calm", "calmo", "quieto"], keywords: ["relax"] },
+  { id: "outdoor", label: { pt: "Ao ar livre", en: "Outdoor", es: "Aire libre" }, icon: "sun", accent: "#f59e0b", group: "mood", synonyms: ["ar livre", "outdoor", "aire libre"], keywords: ["open air"] },
+  { id: "lake", label: { pt: "Lagos", en: "Lakes", es: "Lagos" }, icon: "wave", accent: "#0f766e", group: "category", synonyms: ["lago", "lake", "laguna"], keywords: ["water"] },
+  { id: "waterfall", label: { pt: "Cachoeiras", en: "Waterfalls", es: "Cascadas" }, icon: "wave", accent: "#0284c7", group: "category", synonyms: ["cachoeira", "waterfall", "cascada"], keywords: ["water"] },
+  { id: "bakery", label: { pt: "Padarias", en: "Bakeries", es: "Panaderías" }, icon: "bag", accent: "#b45309", group: "food", synonyms: ["padaria", "bakery", "panadería"], keywords: ["bread", "breakfast"] },
+  { id: "bar", label: { pt: "Bares", en: "Bars", es: "Bares" }, icon: "moon", accent: "#7f1d1d", group: "food", synonyms: ["bar", "pub", "boteco"], keywords: ["nightlife", "drink"] }
 ];

@@ -15,13 +15,15 @@ EBOT.Keyboard = {
     this.render();
     const panel = EBOT.Utils.qs("#keyboard");
     panel.classList.add("is-visible");
-    EBOT.State.set({ keyboardVisible: true }, { partial: true });
+    EBOT.State.data.keyboardVisible = true;
+    EBOT.Render.nav();
     if (window.gsap) gsap.to(panel, { y: 0, opacity: 1, duration: .28, ease: "power2.out" });
   },
   close() {
     const panel = EBOT.Utils.qs("#keyboard");
     const done = () => panel.classList.remove("is-visible");
-    EBOT.State.set({ keyboardVisible: false }, { partial: true });
+    EBOT.State.data.keyboardVisible = false;
+    EBOT.Render.nav();
     if (window.gsap) gsap.to(panel, { y: "125%", opacity: 0, duration: .22, ease: "power2.in", onComplete: done }); else done();
   },
   press(key) {
